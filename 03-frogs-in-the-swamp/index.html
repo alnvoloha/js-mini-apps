@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Frogs in the swamp</title>
+</head>
+<body  class="flex flex-col justify-between m-auto bg-gray-800 p-8 max-w-screen-md min-h-screen text-l text-white">
+    <header><h1 class="flex justify-center py-8 text-4xl text-yellow-400">Frogs in the swamp</h1></header>
+    <div id="rules-text" class="  py-4">
+       <p> Swap the frogs. The three frogs on the left must move 3 stones to the right, and the three frogs on the right must move 3 stones to the left. Each frog can only jump forward to an adjacent stone if it is empty, or to an empty stone behind the adjacent frog. </p>
+    </div>
+   <img src="./frog.png" alt="frog picture" width="50%" height="50%" class="m-auto"> 
+    <button  id="start-game-button" class="py-3 my-1 bg-yellow-400/50   rounded-md hover:bg-yellow-500">Start the game!</button>
+    
+    <script type="module" src="./start_page.js"></script>
+</body>
+</html>

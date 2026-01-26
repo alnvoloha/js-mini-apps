@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Password Manager</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+</head>
+<body class="flex flex-col justify-between m-auto bg-gray-800 p-8 max-w-screen-md min-h-screen text-white">
+  <h1 class="text-4xl text-yellow-400">Password Manager</h1>
+
+  <!-- GENERATOR -->
+  <fieldset class="bg-gray-800 border-4 border-yellow-400 rounded-lg p-4 w-full">
+    <legend>Generate password</legend>
+    <label>Length <input class="bg-gray-800 border-4 border-yellow-400 rounded-lg px-2 py-1" type="number" id="len" value="12" min="4" max="64"></label><br>
+    <label><input type="checkbox" id="chkLower" checked> a‑z</label>
+    <label><input type="checkbox" id="chkUpper" checked> A‑Z</label>
+    <label><input type="checkbox" id="chkDigits" checked> 0‑9</label>
+    <label><input type="checkbox" id="chkSymbols" checked> !@#…</label><br>
+    <button class="p-3 my-1 bg-yellow-400/50 rounded-md hover:bg-yellow-500" id="btnGen">Generate</button>
+    <div class="output" id="genOut"></div>
+  </fieldset>
+
+  <!-- SAVE -->
+  <fieldset class="bg-gray-800 border-4 border-yellow-400 rounded-lg p-4 w-full">
+    <legend>Save generated password</legend>
+    <label>Label <input class="bg-gray-800 border-4 border-yellow-400 rounded-lg px-2 py-1" type="text" id="saveLabel"></label>
+    <label>Master key <input class="bg-gray-800 border-4 border-yellow-400 rounded-lg px-2 py-1" type="text" id="saveKey"></label><br>
+    <button class="p-3 my-1 bg-yellow-400/50 rounded-md hover:bg-yellow-500" id="btnSave">Save</button>
+  </fieldset>
+
+  <!-- RETRIEVE -->
+  <fieldset class="bg-gray-800 border-4 border-yellow-400 rounded-lg p-4 w-full">
+    <legend>Retrieve password</legend>
+    <label>Label <input class="bg-gray-800 border-4 border-yellow-400 rounded-lg px-2 py-1" type="text" id="getLabel"></label>
+    <label>Master key <input class="bg-gray-800 border-4 border-yellow-400 rounded-lg px-2 py-1" type="text" id="getKey"></label><br>
+    <button class="p-3 my-1 bg-yellow-400/50 rounded-md hover:bg-yellow-500" id="btnGet">Retrieve</button>
+    <div class="output" id="getOut"></div>
+  </fieldset>
+
+  <!-- LIST -->
+  <fieldset class="bg-gray-800 border-4 border-yellow-400 rounded-lg p-4 w-full">
+    <legend>Stored labels</legend>
+    <button class="p-3 my-1 bg-yellow-400/50 rounded-md hover:bg-yellow-500" id="btnList">Refresh list</button>
+    <div class="list" id="listOut"></div>
+  </fieldset>
+
+  <!-- core library -->
+  <script src="passwordManager.js"></script>
+  <script>
+    // Проводим настройку только после полной загрузки DOM
+    window.addEventListener('DOMContentLoaded', () => {
+      const $ = id => document.getElementById(id);
+
+      // generate
+      $("btnGen").onclick = () => {
+        try {
+          const pwd = PasswordManager.generate({
+            length: +$("len").value,
+            lower : $("chkLower").checked,
+            upper : $("chkUpper").checked,
+            digits: $("chkDigits").checked,
+            symbols: $("chkSymbols").checked
+          });
+          $("genOut").textContent = pwd;
+        } catch (e) {
+          alert(e.message);
+        }
+      };
+
+      // save
+      $("btnSave").onclick = () => {
+        const label = $("saveLabel").value.trim();
+        const key   = $("saveKey").value;
+        const pwd   = $("genOut").textContent;
+        if (!label || !key || !pwd) return alert("Fill label, master key, generate pwd first");
+        try {
+          PasswordManager.save(label, pwd, key);
+          alert("Saved");
+          refreshList();
+        } catch (e) {
+          alert(e.message);
+        }
+      };
+
+      // retrieve
+      $("btnGet").onclick = () => {
+        const label = $("getLabel").value.trim();
+        const key   = $("getKey").value;
+        if (!label || !key) return alert("Fill both fields");
+        try {
+          $("getOut").textContent = PasswordManager.retrieve(label, key);
+        } catch (e) {
+          alert(e.message);
+        }
+      };
+
+      // list
+      const refreshList = () => {
+        $("listOut").textContent = PasswordManager.list().join(", ");
+      };
+      $("btnList").onclick = refreshList;
+      refreshList();
+    });
+  </script>
+</body>
+</html>
