@@ -6,7 +6,7 @@ A growing collection of small web apps built with **HTML/CSS/JavaScript** to pra
 - clean structure and readable code
 
 🌐 Live demo (GitHub Pages):  
-https://alnvoloha.github.io/js-mini-projects/
+https://alnvoloha.github.io/js-mini-apps/
 
 ---
 
