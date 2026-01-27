@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Быки и коровы</title>
+
+
+</head>
+
+<body>
+    <div id="box">
+        <img src="images/bull.png" id="bull" alt="bull" width="25%">
+        <div id="instruction">
+            <h1 id="text-name">Быки и коровы</h1>
+            <h2>Правила игры: </h2>
+            <br>
+            <p>Компьютер задумывает четыре различные цифры из 0,1,2,...9. Игрок делает ходы, чтобы узнать эти цифры и их
+                порядок.
+                <br>
+                <br> Каждый ход состоит из четырёх цифр, 0 может стоять на первом месте.
+                <br>
+                <br> В ответ компьютер показывает число отгаданных цифр, стоящих на своих местах (число быков) и число
+                отгаданных цифр, стоящих не на своих местах (число коров).
+
+            </p>
+
+        </div>
+
+        <img src="images/cow2.png" id="cow" width="25%">
+    </div>
+
+    <div id="enter">
+        <p>Компьютер загадал число</p>
+        <input type="number" value="0" id="first">
+        <input type="number" value="0" id="second">
+        <input type="number" value="0" id="third">
+        <input type="number" value="0" id="fourth">
+
+        <input type="button" value="enter">
+        <div id="result">
+            попытка:
+        </div>
+    </div>
+
+   
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

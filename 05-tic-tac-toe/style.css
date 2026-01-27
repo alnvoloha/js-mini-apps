@@ -1,0 +1,88 @@
+
+*{
+  font-family:tahoma, Georgia; 
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+color: #00f2ff;
+
+}
+h1{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 500%;
+
+}
+
+span{
+  position: absolute;
+  font-size: 3vw;
+  transform: translate(-50%, -50%);
+}
+
+table {
+  margin: 0 auto;
+  width: 300pt;
+  height: 300pt;
+  border-collapse: collapse;
+  position: relative;
+  border-radius: 0.4em;
+  box-shadow: 4px 4px 4px 4px #49f4fd94;
+}
+
+
+
+td {
+  
+  border: 3pt solid ;
+}
+
+table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+td:hover {
+  background-color: #f971f2;
+}
+.border-removed-input {
+  border: 0;
+}
+input, #buttonStartGame, .reload-button, .reload-buttonWin{
+  
+  padding:1vw;
+  border: none;
+  background-color: #ff93faa9;
+  border-radius: 1vw 1vw 1vw 1vw;
+}
+
+input:hover {
+  background-color: rgb(249, 113, 242);
+}
+
+.win-message, .draw-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 4vw;
+  background-color: #f971f2b2;
+  color: white;
+  font-size: 4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+td:hover {
+  background-color: #f971f2d2;
+}
+
+td:hover span:not(:empty) {
+  background-color: initial;
+}
+

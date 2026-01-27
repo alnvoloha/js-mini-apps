@@ -1,0 +1,39 @@
+*{
+    font-family:tahoma, Georgia; 
+    margin: 0 auto;
+    padding: 0;
+    background-color: antiquewhite;
+
+}
+
+#box{
+    display: flex;
+    justify-content: space-between;
+}
+
+#text-name {
+    margin-top: 20%;
+    text-align: center;
+    font-size: 4em;
+    padding: auto;
+    margin-bottom: 10vh;
+    font-family: Georgia;
+  }
+
+
+#bull{
+    margin: 4vh;
+    padding: 0%;
+
+}
+#enter{
+    display: block;
+    margin-left: 40vw;
+    margin-right: 30vw;
+}
+
+
+
+
+     input[type="number"]{ width: 4vw;}
+

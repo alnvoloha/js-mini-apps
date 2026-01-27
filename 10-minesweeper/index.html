@@ -1,0 +1,68 @@
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="top">
+        <div class="title">
+          <h1>Minesweeper</h1>
+          <p class="sub">ЛКМ открыть • ПКМ флаг</p>
+        </div>
+
+        <div class="panel">
+          <div class="row">
+            <label class="label">
+              Сложность
+              <select id="preset" class="control">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+                <option value="custom">Custom</option>
+              </select>
+            </label>
+
+            <label class="label">
+              Размер
+              <input id="size" class="control" type="number" min="8" max="30" value="10" />
+            </label>
+
+            <label class="label">
+              Мины
+              <input id="mines" class="control" type="number" min="1" max="300" value="15" />
+            </label>
+
+            <button id="newGame" class="btn">New game</button>
+          </div>
+
+          <div class="row stats">
+            <div class="stat">
+              <span class="k">Mines</span>
+              <span id="minesLeft" class="v">15</span>
+            </div>
+            <div class="stat">
+              <span class="k">Time</span>
+              <span id="timer" class="v">0</span>
+            </div>
+            <div id="status" class="status">Нажми на поле, чтобы начать</div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <div id="boardWrap" class="board-wrap"></div>
+      </main>
+
+      <footer class="footer">
+        <span>Tip: первая клетка всегда безопасна.</span>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

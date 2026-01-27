@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ticToe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="name">Крестики-нолики</h1>
+    
+    <div id="main">
+      <div id="input">
+        <label for="size">Количество клеток в строке:</label>
+        <input type="number" id="size" min="3" max="10" value="3">
+        <button onclick="startGame()" id="buttonStartGame">Выбрать/Начать игру</button>
+      </div>
+    </div>
+    <div id="msg"></div>
+    
+  </body>
+  <script src="script.js"></script>
+</html>

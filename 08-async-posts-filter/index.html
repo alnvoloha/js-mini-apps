@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filterable list</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input{
+            padding: 5px 10px;
+            font-size: 18px;
+            text-align: center;
+            width: 500px;
+        }
+        .wrapper{
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .posts{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .post{
+            text-align: left;
+            font-size: 20px;
+            margin: 0 0 20px 0;
+        }
+        .post._hr{
+            border-bottom: 1px solid #777676;
+            padding: 0 0 50px 0;
+        }
+        #postsContainer{
+            margin: 40px 0 0 0;
+        }
+        .postTitle{
+            font-weight: 600;
+            font-size: 25px;
+            margin: 0 0 10px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="posts">
+            <input type="text" id="find" placeholder="Введите название">
+            <div id="postsContainer">
+    
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+<script type="module" src="js/main.js"></script>
+</html>
