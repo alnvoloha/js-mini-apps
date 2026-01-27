@@ -25,8 +25,10 @@ Example:
 
 ```bash
 npx serve
+```
 
 ## Tech
 
 HTML • CSS • JavaScript • Fetch API
-```
+
+
